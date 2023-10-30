@@ -1,0 +1,63 @@
+In Python, you can sort various types of data structures using the methods mentioned earlier. Here are examples of sorting different data types:
+
+1. **Sorting Lists:**
+
+   You can sort lists of various data types, including numbers, strings, and custom objects.
+
+   ```python
+   # Sorting a list of numbers
+   numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+   sorted_numbers = sorted(numbers)
+
+   # Sorting a list of strings
+   fruits = ["apple", "banana", "kiwi", "strawberry", "blueberry"]
+   sorted_fruits = sorted(fruits)
+
+   # Sorting a list of custom objects (e.g., dictionaries)
+   data = [{'name': 'Alice', 'age': 25}, {'name': 'Bob', 'age': 30}, {'name': 'Charlie', 'age': 22}]
+   sorted_data = sorted(data, key=lambda x: x['age'])
+   ```
+
+2. **Sorting Tuples:**
+
+   Tuples are similar to lists but are immutable. You can use the same sorting methods as with lists.
+
+   ```python
+   tuple_of_numbers = (3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5)
+   sorted_tuple = sorted(tuple_of_numbers)
+   ```
+
+3. **Sorting Sets:**
+
+   Sets are unordered collections of unique elements. You can convert a set to a list, sort it, and then convert it back to a set if needed.
+
+   ```python
+   set_of_numbers = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5}
+   sorted_set = set(sorted(set_of_numbers))
+   ```
+
+4. **Sorting Dictionaries:**
+
+   Dictionaries are not directly sortable, but you can sort them based on their keys or values using the `sorted()` function and the `key` parameter.
+
+   ```python
+   dictionary = {'apple': 3, 'banana': 1, 'kiwi': 4, 'strawberry': 2, 'blueberry': 5}
+   sorted_dict_keys = {key: dictionary[key] for key in sorted(dictionary)}
+   sorted_dict_values = {key: value for key, value in sorted(dictionary.items(), key=lambda item: item[1])}
+   ```
+
+5. **Sorting Custom Objects:**
+
+   You can sort lists of custom objects by providing a key function that specifies how to compare the objects.
+
+   ```python
+   class Person:
+       def __init__(self, name, age):
+           self.name = name
+           self.age = age
+
+   people = [Person('Alice', 25), Person('Bob', 30), Person('Charlie', 22)]
+   sorted_people = sorted(people, key=lambda x: x.age)
+   ```
+
+These are some common data types you can sort in Python. The `sorted()` function and the `sort()` method are versatile and can be used for sorting a wide range of data structures.
