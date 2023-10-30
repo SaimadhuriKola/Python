@@ -1,0 +1,42 @@
+Linear search, also known as sequential search, is a basic searching algorithm that scans through a collection of data elements one by one, from the beginning to the end, until it finds the target element or determines that the target element is not present. It's a straightforward method to locate a specific value within an unordered list, array, or other data structures.
+
+Here's a detailed explanation of how linear search works:
+
+**Algorithm:**
+1. Start at the first element of the list.
+2. Compare the current element with the target element.
+3. If they match, the search is successful, and the index (or position) of the target element is returned.
+4. If the current element does not match the target element, move to the next element in the list.
+5. Repeat steps 2-4 until the target element is found or the end of the list is reached.
+6. If the target element is not found in the entire list, return a sentinel value (e.g., -1) to indicate that the element is not present.
+
+**Pseudocode:**
+```plaintext
+function linear_search(arr, target):
+    for i from 0 to length(arr) - 1:
+        if arr[i] == target:
+            return i
+    return -1
+```
+
+**Example:**
+Suppose you have an unordered list of numbers and you want to find the index of the element 6:
+
+```python
+my_list = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+target = 6
+
+result = linear_search(my_list, target)
+```
+
+In this case, the linear search algorithm will iterate through the list as follows:
+- Compare 3 (index 0) with 6; they don't match, so move to the next element.
+- Compare 1 (index 1) with 6; no match, move to the next.
+- Continue this process until the algorithm reaches 6 (index 7), which is the target element.
+- The algorithm returns the index 7, indicating that the target element 6 is found at that position.
+
+**Complexity:**
+- Time Complexity: In the worst-case scenario, when the target element is at the end of the list or not present at all, linear search requires checking every element in the list, leading to a time complexity of O(n), where n is the number of elements in the list.
+- Space Complexity: Linear search has a constant space complexity of O(1) as it doesn't require additional memory allocation.
+
+Linear search is straightforward and easy to implement, making it suitable for small lists or when the data is unsorted. However, for larger datasets or when performance is a concern, more efficient search algorithms like binary search or hash tables may be preferred.
